@@ -1,93 +1,60 @@
-# Sales_oportunity
-Modelagem de dados e pipeline ETL de oportunidades de vendas utilizando
-# Sales Opportunity
+# 📊 Sales Opportunity Analysis
 
-Projeto de modelagem de dados e pipeline ETL baseado em oportunidades de vendas.
+Projeto de análise de dados de oportunidades de vendas, desenvolvido
+com o objetivo de aplicar conceitos de Excel, SQL e Business Intelligence.
 
-O conjunto de dados é dividido em quatro tabelas principais: `accounts`, `products`, `sales_teams` e `sales_pipeline`.
+## 🎯 Objetivo
 
-## Estrutura dos dados
+Analisar o pipeline comercial de uma empresa buscando identificar
+padrões de vendas, desempenho dos vendedores, produtos mais vendidos
+e evolução das oportunidades comerciais.
 
-### accounts
+## 🛠️ Tecnologias utilizadas
 
-Contém as informações das empresas/clientes envolvidos nas oportunidades de venda.
+- Excel
+- SQL
+- Power BI
 
-```text
-account_id        PK
-account
-sector
-year_established
-revenue
-employees
-office_location
-subsidiary_of
-```
+## 📂 Base de dados
 
-- `account_id`: identificador único da empresa.
-- `account`: nome da empresa.
-- `sector`: setor de atuação.
-- `year_established`: ano de fundação.
-- `revenue`: receita da empresa.
-- `employees`: número de funcionários.
-- `office_location`: localização do escritório.
-- `subsidiary_of`: empresa controladora, caso seja uma subsidiária.
+O conjunto de dados é composto por quatro tabelas:
 
----
+- accounts
+- products
+- sales_teams
+- sales_pipeline
 
-### products
+## 🗄️ Modelagem dos dados
 
-Contém os produtos comercializados pela empresa.
+A tabela `sales_pipeline` funciona como tabela central e possui
+relacionamentos com clientes, produtos e vendedores.
 
-```text
-product_id        PK
-product
-series
-sales_price
-```
+[imagem do modelo futuramente]
 
-- `product_id`: identificador único do produto.
-- `product`: nome do produto.
-- `series`: linha ou série do produto.
-- `sales_price`: preço de venda.
+## 🔎 Análises realizadas
 
----
+Durante o projeto foram realizadas análises como:
 
-### sales_teams
+- Receita total
+- Receita por produto
+- Receita por vendedor
+- Taxa de conversão
+- Ticket médio
+- Evolução das vendas
+- Desempenho regional
 
-Contém as informações dos vendedores e da estrutura comercial.
+## 📊 Dashboard
 
-```text
-sales_agent_id    PK
-sales_agent
-manager
-regional_office
-```
+[imagem do dashboard futuramente]
 
-- `sales_agent_id`: identificador único do vendedor.
-- `sales_agent`: nome do vendedor.
-- `manager`: gerente responsável.
-- `regional_office`: escritório regional.
+## 💡 Principais insights
 
----
+Os principais insights encontrados durante a análise serão apresentados
+nesta seção após a conclusão do projeto.
 
-### sales_pipeline
+## 📁 Estrutura do projeto
 
-Tabela principal do projeto, contendo as oportunidades de vendas e relacionando clientes, produtos e vendedores.
-
-```text
-opportunity_id    PK
-sales_agent_id    FK -> sales_teams.sales_agent_id
-product_id        FK -> products.product_id
-account_id        FK -> accounts.account_id
-deal_stage
-engage_date
-close_date
-close_value
-```
-
-- `opportunity_id`: identificador único da oportunidade.
-- `sales_agent_id`: vendedor responsável pela oportunidade.
-- `product_id`: produto relacionado à oportunidade.
-- `account_id`: cliente relacionado à oportunidade.
-- `deal_stage`: estágio atual da negociação.
-- `engage
+- `/data` → bases utilizadas
+- `/sql` → consultas e tratamento dos dados
+- `/excel` → análises realizadas no Excel
+- `/dashboard` → dashboard final
